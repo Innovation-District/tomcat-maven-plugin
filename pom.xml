@@ -52,14 +52,7 @@
     <verifier.maven.debug>false</verifier.maven.debug>
     <verifier.debugJvm>false</verifier.debugJvm>
     <maven.resources.escapeString>\</maven.resources.escapeString>
-    <distributionReleaseUrl>https://buildserver.onegini.com/nexus/content/repositories/releases</distributionReleaseUrl>
 
-    <distributionSnapshotsUrl>https://buildserver.onegini.com/nexus/content/repositories/snapshots
-    </distributionSnapshotsUrl>
-    <distributionIdSnapshots>apache.snapshots.https</distributionIdSnapshots>
-
-    <distributionSiteUrl>scp://people.apache.org/www/tomcat.apache.org/maven-plugin-${project.version}
-    </distributionSiteUrl>
     <sitePath>maven-plugin-trunk</sitePath>
     <siteUrl>http://tomcat.apache.org/${sitePath}</siteUrl>
 
@@ -839,23 +832,5 @@
       </releases>
     </repository>
   </repositories>
-
-  <distributionManagement>
-    <repository>
-      <id>apache.releases.https</id>
-      <name>Apache Release Distribution Repository</name>
-      <url>${distributionReleaseUrl}</url>
-    </repository>
-
-    <snapshotRepository>
-      <id>${distributionIdSnapshots}</id>
-      <name>Apache Development Snapshot Repository</name>
-      <url>${distributionSnapshotsUrl}</url>
-    </snapshotRepository>
-    <site>
-      <id>apache.website</id>
-      <url>${tomcat-maven.siteUrlDeployment}</url>
-    </site>
-  </distributionManagement>
 
 </project>
