@@ -64,11 +64,6 @@
     <!-- to prevent isssues with last apache parent pom -->
     <arguments />
 
-    <tomcat-maven.siteFilePath>${user.home}/tomcat-maven-plugin-${project.version}/</tomcat-maven.siteFilePath>
-    <tomcat-maven.siteUrlDeployment>file://${tomcat-maven.siteFilePath}</tomcat-maven.siteUrlDeployment>
-    <tomcat-maven.scmPubCheckoutDirectory>${user.home}/tomcat-maven-plugin-${project.version}-content
-    </tomcat-maven.scmPubCheckoutDirectory>
-
   </properties>
 
   <prerequisites>
@@ -790,5 +785,19 @@
       </releases>
     </repository>
   </repositories>
+
+  <distributionManagement>
+    <repository>
+      <id>innovation-district-nexus</id>
+      <name>Innovation District Nexus Maven releases repository</name>
+      <url>https://buildserver.onegini.com/nexus/content/repositories/releases</url>
+    </repository>
+
+    <snapshotRepository>
+      <id>innovation-district-nexus</id>
+      <name>Innovation District Nexus Maven snapshots repository</name>
+      <url>https://buildserver.onegini.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 
 </project>
