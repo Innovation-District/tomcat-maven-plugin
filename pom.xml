@@ -32,8 +32,6 @@
     container.
   </description>
 
-  <url>${siteUrl}</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.5</maven.compiler.source>
@@ -51,9 +49,6 @@
     <verifier.maven.debug>false</verifier.maven.debug>
     <verifier.debugJvm>false</verifier.debugJvm>
     <maven.resources.escapeString>\</maven.resources.escapeString>
-
-    <sitePath>maven-plugin-trunk</sitePath>
-    <siteUrl>http://tomcat.apache.org/${sitePath}</siteUrl>
 
     <!-- http port used to run it test -->
     <its.http.port>1973</its.http.port>
@@ -712,36 +707,11 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>2.5</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
           <version>2.5</version>
           <configuration>
             <preparationGoals>clean install</preparationGoals>
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>3.3</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-invoker-plugin</artifactId>
-          <version>1.8</version>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.plexus</groupId>
-          <artifactId>plexus-component-metadata</artifactId>
-          <version>1.5.5</version>
         </plugin>
         <plugin>
           <groupId>org.apache.rat</groupId>
@@ -763,18 +733,6 @@
           </configuration>
         </plugin>
 
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-scm-publish-plugin</artifactId>
-          <version>1.0</version>
-          <configuration>
-            <pubScmUrl>scm:svn:https://svn.apache.org/repos/asf/tomcat/site/trunk/docs/${sitePath}</pubScmUrl>
-            <checkinComment>Apache Tomcat Maven Plugin site documentation for ${project.version}</checkinComment>
-            <content>${tomcat-maven.siteFilePath}</content>
-            <checkoutDirectory>${tomcat-maven.scmPubCheckoutDirectory}</checkoutDirectory>
-            <tryUpdate>true</tryUpdate>
-          </configuration>
-        </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
